@@ -1,0 +1,98 @@
+body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer {
+      background-color: #e0f0ff;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    h2.section-title {
+      margin: 30px 20px 10px;
+      font-size: 20px;
+    }
+
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding: 10px 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .product-box {
+      flex: 0 0 auto;
+      width: 180px;
+      height: 220px;
+      border: 2px solid #ccc;
+      padding: 10px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    .product-box img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .badge {
+      font-size: 14px;
+      font-weight: bold;
+      padding: 4px 8px;
+      border-radius: 5px;
+      margin-left: 10px;
+    }
+
+    .popular { background-color: #d9c9ff; color: #333; }
+    .ending { background-color: #ffc9c9; color: #333; }
+    .newest { background-color: #c9ffd9; color: #333; }
+
+    .category-menu {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px;
+    }
+
+    .category-menu button {
+      padding: 8px 16px;
+      border: none;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .cta-banner {
+      background-color: #fff3cd;
+      text-align: center;
+      padding: 20px;
+      margin: 30px;
+      border-radius: 10px;
+      border: 2px dashed #ffcc00;
+    }
+
+    .more-btn {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .more-btn button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
