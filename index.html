@@ -2,90 +2,36 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>중고 의류 경매 플랫폼</title>
-</head>
-<body>
+  <title>캐러셀 예제</title>
+ <body>
 
-<!-- 🧥 헤더 -->
-<header>
-  중고 의류 경매 플랫폼
-</header>
-
-<!-- 👚 카테고리 네비게이션 -->
-<h2 class="section-title">👗 카테고리별 보기</h2>
-<div class="category-menu">
-  <a href="main.jsp?category=남성의류"><button>남성의류</button></a>
-  <a href="main.jsp?category=여성의류"><button>여성의류</button></a>
-  <a href="main.jsp?category=아우터"><button>아우터</button></a>
-  <a href="main.jsp?category=신발"><button>신발</button></a>
-  <a href="main.jsp?category=모자"><button>모자</button></a>
-  <a href="main.jsp?category=잡화"><button>잡화</button></a>
-  <a href="main.jsp"><button>전체보기</button></a>
-</div>
-
-<!-- 💜 인기 상품 -->
-<h2 class="section-title">인기 상품 <span class="badge popular">POPULAR</span></h2>
-<div class="slider">
-  <div class="product-box">
-    <img src="https://via.placeholder.com/150">
-    <p>니트 조끼</p>
+  <h2>🔥 인기 상품</h2>
+  <div class="carousel">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="slide">🔥 인기상품 1</div>
+      <div class="slide">🧥 인기상품 2</div>
+      <div class="slide">👟 인기상품 3</div>
+    </div>
+    <button class="prev" onclick="moveSlide(-1)">←</button>
+    <button class="next" onclick="moveSlide(1)">→</button>
   </div>
-  <div class="product-box">
-    <img src="https://via.placeholder.com/150">
-    <p>미니 가방</p>
-  </div>
-  <div class="product-box">
-    <img src="https://via.placeholder.com/150">
-    <p>에코백</p>
-  </div>
-</div>
 
-<!-- 🧨 마감임박 상품 -->
-<h2 class="section-title">마감임박 상품 <span class="badge ending">ENDING</span></h2>
-<div class="slider">
-  <div class="product-box">
-    <img src="https://via.placeholder.com/150" />
-    <p>청자켓</p>
-    <p>~ 6/24 18:00</p>
-  </div>
-  <div class="product-box">
-    <img src="https://via.placeholder.com/150" />
-    <p>조던 신발</p>
-    <p>~ 6/25 19:00</p>
-  </div>
-  <div class="product-box">
-    <img src="https://via.placeholder.com/150" />
-    <p>샤넬 롱코트</p>
-    <p>~ 6/27 20:00</p>
-  </div>
-</div>
+  <script>
+    let currentIndex = 0;
+    const track = document.getElementById('carouselTrack');
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
 
-<!-- 🆕 신규 등록 상품 -->
-<h2 class="section-title">신규 등록 상품 <span class="badge newest">NEW</span></h2>
-<div class="grid">
-  <div class="product-box"><img src="https://via.placeholder.com/150"><p>니트 조끼</p></div>
-  <div class="product-box"><img src="https://via.placeholder.com/150"><p>미니 가방</p></div>
-  <div class="product-box"><img src="https://via.placeholder.com/150"><p>에코백</p></div>
-  <div class="product-box"><img src="https://via.placeholder.com/150"><p>롱자켓</p></div>
-  <div class="product-box"><img src="https://via.placeholder.com/150"><p>청바지</p></div>
-  <div class="product-box"><img src="https://via.placeholder.com/150"><p>셔츠</p></div>
-</div>
+    function moveSlide(direction) {
+      currentIndex += direction;
 
-<!-- 더보기 버튼 (동작 없음 / JSP에서 페이징 처리 가능) -->
-<div class="more-btn">
-  <button>제품 더보기</button>
-</div>
+      if (currentIndex < 0) currentIndex = totalSlides - 1;
+      if (currentIndex >= totalSlides) currentIndex = 0;
 
-<!-- 🙋 경매 등록 배너 -->
-<div class="cta-banner">
-  👕 의류 팔고 싶으신가요? <br>
-  👉 지금 바로 <strong>[경매 등록]</strong> 하세요!
-</div>
-
-<!-- 🧦 푸터 -->
-<footer>
-  푸터 영역
-</footer>
+      const offset = -300 * currentIndex;
+      track.style.transform = `translateX(${offset}px)`;
+    }
+  </script>
 
 </body>
 </html>
